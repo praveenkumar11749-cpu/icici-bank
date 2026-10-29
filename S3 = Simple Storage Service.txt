@@ -1,0 +1,124 @@
+## S3 = Simple Storage Service
+
+1. Cost
+	40-50% cheaper then the other cloud storage.
+
+2. Flexibility
+	Amazon S3 increased the maximum object size to 50 TB, a 10x increase from the previous 5 TB limit.
+
+
+Objects = files = any type of files ===> any kind of data storage which you can store.
+
+
+Where are you using the S3 in your project ?
+	
+1. Storing the logs of the application in different stages.
+
+***2. Data transfer
+	a. Public transfer
+	b. restricted transfer
+	c. Replication
+
+****3. Static web hosting.
+
+	Frontend websites hosting. Static websites
+
+
+S3 bucket ===> Onedrive
+
+	By default, you can create up to 10,000 general purpose buckets per AWS account. There is no max bucket size or limit to the number of objects that you can create.
+
+
+ARN:
+
+arn:aws:s3:::mounika-517293881035-us-west-2-an
+
+arn:aws:<service-name>:<region>:<account-id>:<resource-name>
+
+arn:aws:iam::517293881035:user/siva-aws
+
+arn:aws:ec2:us-west-2:517293881035:subnet/subnet-0c21eac4f4eff2274
+
+arn:aws:ec2:us-west-2:517293881035:instance/i-028ba1d813e662a73
+
+
+
+S3 URI: s3://mounika-517293881035-us-west-2-an/DNS = Domain Name System.txt
+
+	s3://mounika-517293881035-us-west-2-an/ServerCreation.txt
+
+	s3://mounika-517293881035-us-west-2-an/siva/IAM.drawio
+
+
+
+S3 URL: https://mounika-517293881035-us-west-2-an.s3.us-west-2.amazonaws.com/siva/IAM.drawio
+
+	https://mounika-517293881035-us-west-2-an.s3.us-west-2.amazonaws.com/ServerCreation.txt
+
+
+Object access through https(internet) is only possible:
+
+		(Block all public access = true/false) + (bucket policy/permissions)
+
+					satisfied + satisfied
+
+				X + Y
+
+	NOTE: Bucket policy is supremacy of the permissions
+
+	bucket policy = Object access to everyone.
+
+
+
+			Principal: who can access ?
+
+			Action: what they can perform ?
+			
+			Resource: On which resource they can do actions ?
+
+
+###########################################################
+
+
+amazon = iPhone 17 pro ===> oct 22
+
+
+logging tool == where they store the logs.
+
+		1GB = 10$/Month in logging tool
+			
+
+April 27
+
+	S3 standard class = 2$ ===> 6 months
+
+
+October 27
+
+	S3 intelligent tier = 1$ ===> 3 months
+
+NOTE: time period is our customization
+
+Jan 2028
+
+	Glacier class = 0.70cents ====> 4 months
+
+
+	Deep glacier = 0.40cents =====> 6 months
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

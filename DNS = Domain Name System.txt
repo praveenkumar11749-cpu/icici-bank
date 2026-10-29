@@ -1,0 +1,76 @@
+###############################################
+***********************************************
+DNS = Domain Name System
+
+DNS Provider ===> Godaddy, Hostigner, NameCheap, Cloudfare
+
+
+Buy ===> X NOT Correct
+
+Rent ===> Correct
+
+my domain is "sivadevops.cloud" ==> one year, every year renew it.
+
+
+DNS Records:
+
+DNS records control how your domain works. Use DNS records to connect your domain to websites, email services, and other online tools.
+
+The DNS Records means the key and value, where the domain/subdomain are redirected/pointed to the particular value.
+
+		www.sneha.com
+
+			Sneha.com ===> domain
+
+			www ==> subdomain
+
+
+		www.makemytrip.com ===> alb
+
+		offers.makemytrip.com ===> alb
+
+
+How to attach the loadbalancer to the domain ? ===> through DNS records
+
+
+			Key == Value
+
+			subdomain == ALB
+
+Multiple types of records:
+
+Regular basis:
+
+	1. A ====> Value == IP address
+
+			Key == Value
+
+			subdomain == IP
+
+	2. CNAME ===> Value = ALB, CloudFront, API gateway
+
+			Key == Value
+
+			subdomain == ALB/CloudFront
+=======================================
+
+When you are in position of admin to startup company or get chance to setup from scratch
+
+	3. TXT ===> Security purpose
+
+	4. MX == > Mail server records
+
+			siva.chaithanya@binance.com
+
+
+
+TTL = Time to Live
+
+
+
+
+
+
+
+
+
