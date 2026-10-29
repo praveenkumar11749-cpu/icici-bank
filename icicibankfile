@@ -1,62 +1,40 @@
-
 pipeline {
-    agent {
-        docker {
-            image 'maven:3.9.9-eclipse-temurin-21'
-        }
+    agent agent
+
+    environment {
+        SEVER_IP = credentials('banking')
+        APP_NAME = "icici-bank"
+
     }
 
     stages {
-        stage('Checkout') {
+
+        stages('checkout') {
             steps {
-                echo 'https://github.com/praveenkumar11749-cpu/icici-bank.git'
+                checkout scm
+
             }
         }
 
-        stage('Check Java and Maven') {
+        stages('Verify Tools') {
             steps {
-                sh 'java -version'
-                sh 'mvn -version'
+                sh 'javac -version'
             }
         }
 
-        stage('Build') {
+        stage('maven build and deploy') {
             steps {
-                sh 'mvn -B clean compile'
+                sshagent(credentials: ['sever-ssh-p']) {
+                    rm -rf ${APP_NAME}
+                    git clone https://github.com/praveenkumar11749-cpu/icici-bank.git
+                    cd ${APP_ NAME}
+                    mvn clean package
+                    sudo cp target/ git.drawio.war /opt/tomcat/webapps/
+                  "
+              '''
+                
+                }
             }
-        }
-
-        stage('Test') {
-            steps {
-                sh 'mvn -B test'
-            }
-        }
-
-        stage('Package') {
-            steps {
-                sh 'mvn -B package'
-            }
-        }
-
-        stage('Archive Artifact') {
-            steps {
-                archiveArtifacts artifacts: 'target/*.jar',
-                                 fingerprint: true
-            }
-        }
-    }
-
-    post {
-        success {
-            echo 'ICICI Bank application built successfully!'
-        }
-
-        failure {
-            echo 'Pipeline failed. Check the Jenkins console log.'
-        }
-
-        always {
-            echo 'CI/CD pipeline finished.'
         }
     }
 }
